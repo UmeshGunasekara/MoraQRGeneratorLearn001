@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This pom.xml comes with basic dependency requirements and create for MoraQRGeneratorLearn001 Project
+ *
+ * @Author: SLMORA
+ * @DateTime: 4/3/2021 3:26 PM
+ * <p>
+ * Version      Date            Editor              Note
+ * =====================================================================================================================
+ * 1.0          4/3/2021        SLMORA              Initial Code (Get copy form MoraStreamLearn001 POM)
+ * 1.1          4/3/2021        SLMORA              Added com.google.zxing -> core for QR generation
+ *
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.slmora.learn</groupId>
+	<artifactId>moraqrgeneratorlearn001</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<!-- Project Information -->
+	<name>MoraQRGeneratorLearn001</name>
+	<description>MoraQRGeneratorLearn001_20210403001</description>
+	<url>http://www.slmora.com</url>
+	<organization>
+		<name>CeylonCode</name>
+		<url>http://ceyloncode.com</url>
+	</organization>
+    <developers>
+		<developer>
+			<id>SLMORA</id>
+			<name>Umesh Gunasekara</name>
+			<email>umesh.gunasekara.n@gamil.com</email>
+			<url>http://www.slmora.com</url>
+			<organization>CeylonCode</organization>
+			<organizationUrl>http://ceyloncode.com</organizationUrl>
+			<roles>
+				<role>owner</role>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>Asia/Colombo</timezone>
+			<properties>
+				<picUrl>https://avatars.githubusercontent.com/u/12097282?v=4</picUrl>
+			</properties>
+		</developer>
+	</developers>
+
+
+	<!-- Project Properties -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<!--		<maven.compiler.source>1.8</maven.compiler.source>-->
+<!--		<maven.compiler.target>1.8</maven.compiler.target>-->
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
+		<mysql.connector.version>8.0.21</mysql.connector.version>
+		<hibernate.version>5.4.22.Final</hibernate.version>
+		<junit.jupiter.version>5.7.0</junit.jupiter.version>
+	</properties>
+
+	<!-- Project Dependencies -->
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20200518</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.13.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.13.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.14</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.transaction/jta -->
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.30</version>
+		</dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/javax.servlet/servlet-api &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>javax.servlet</groupId>-->
+<!--			<artifactId>servlet-api</artifactId>-->
+<!--			<version>2.5</version>-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
+
+        <!-- Added from MoraServletJSPLearn021 -->
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.servlet</groupId>-->
+<!--            <artifactId>javax.servlet-api</artifactId>-->
+<!--            <version>4.0.1</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>javax.servlet.jsp</groupId>-->
+<!--			<artifactId>jsp-api</artifactId>-->
+<!--			<version>2.2</version>-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
+
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/javax.servlet/jstl &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>javax.servlet</groupId>-->
+<!--			<artifactId>jstl</artifactId>-->
+<!--			<version>1.2</version>-->
+<!--		</dependency>-->
+
+        <!-- Added from MoraElapsedTimeLearn001 -->
+
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
+
+        <!-- Added from MoraJDBCLearn001 -->
+
+        <!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.4.5</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.5</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jdbc -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>9.0.39</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.vibur/vibur-dbcp -->
+        <dependency>
+            <groupId>org.vibur</groupId>
+            <artifactId>vibur-dbcp</artifactId>
+            <version>25.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.13.3</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Added from MoraUUIDLearn001 -->
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <version>5.4.1</version>
+        </dependency>
+
+        <!-- Added from MoraHibernateLearn001 -->
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+        <!-- Added from MoraHibernateLearn004 -->
+
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <!-- Added for QR Generation-->
+        <!-- https://mvnrepository.com/artifact/com.google.zxing/core -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.zxing/javase -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
+
+    </dependencies>
+
+	<!-- Build Settings -->
+<!--    Build with java 1.8-->
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.8.1</version>-->
+<!--                <configuration>-->
+<!--                    <source>1.8</source>-->
+<!--                    <target>1.8</target>-->
+<!--                    <outputFileName>MoraServletJSPLearn009</outputFileName>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>2.22.2</version>-->
+<!--                <configuration>-->
+<!--                    <excludes>-->
+<!--                        <exclude>Math</exclude>-->
+<!--                    </excludes>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
+
+	
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <release>14</release>
+<!--                        <source>1.8</source>-->
+<!--                        <target>1.8</target>-->
+                        <outputFileName>MoraStreamLearn001</outputFileName>
+<!--                        <compilerArgs>-->
+<!--                            &#45;&#45;enable-preview-->
+<!--                        </compilerArgs>-->
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.2</version>
+                    <configuration>
+<!--                        <argLine>&#45;&#45;enable-preview</argLine>-->
+                        <excludes>
+                            <exclude>Math</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <configuration>
+<!--                        <argLine>&#45;&#45;enable-preview</argLine>-->
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-toolchains-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>toolchain</goal>
+                        </goals>
+                        <configuration>
+                            <toolchains>
+                                <jdk>
+                                    <version>14</version>
+<!--                                    <version>1.8</version>-->
+                                </jdk>
+                            </toolchains>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

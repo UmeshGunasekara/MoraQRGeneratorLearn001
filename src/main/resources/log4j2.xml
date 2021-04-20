@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * This log4j2.xml comes with basic log4j2 configuration for MoraQRGeneratorLearn001 Project
+ *
+ * @Author: SLMORA
+ * @DateTime: 4/3/2021 4:13 PM
+ * <p>
+ * Version      Date            Editor              Note
+ * =====================================================================================================================
+ * 1.0          4/3/2020        SLMORA              Initial Code (Get copy from MoraStreamLearn001)
+ *
+-->
+<Configuration status="info">
+    <Properties>
+        <Property name="layout">%d [%t] %-5level %logger - %m%n</Property>
+        <Property name="logdir">D:/SLMORAWorkSpace/IntelliJProjects/MoraQRGeneratorLearn001_20210403001/logs</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="${layout}" />
+        </Console>
+        <RollingFile name="LogToFile" fileName="${logdir}/mora-java-file-access-info.log"
+                     filePattern="${logdir}/$${date:yyy-MM-dd}/mora-qr-generator-learn-001-info.%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${layout}" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="1 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingFile>
+        <Async name="Async">
+            <AppenderRef ref="LogToFile" />
+        </Async>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.slmora" level="info" additivity="false" >
+            <AppenderRef ref="LogToConsole" />
+            <AppenderRef ref="LogToFile" />
+            <AppenderRef ref="Async" />
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="LogToConsole" />
+            <AppenderRef ref="LogToFile" />
+        </Root>
+    </Loggers>
+</Configuration>
